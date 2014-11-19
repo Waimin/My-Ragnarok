@@ -1,0 +1,77 @@
+//=============================================================
+// woe warper script
+//=============================================================
+// Copyright 2007 © Project
+//====================================================
+//=============================================================
+// version: 1.4
+//=============================================================
+//description:  simple woe warper that will only warp you 
+//    during guild sieges.
+//=============================================================
+//Notes: It is just my first script so dont complaint that 
+//you think this script sucks and I just started scripting.
+//=============================================================
+//updates: 
+//1.2-Aded check name command.
+//1.3-Fixed some grammar mistakes cleaned up script a bit.
+//1.4-Fixed the script up and corrected some grammar.
+//1.5-Extra gramatical errors and general edits
+//1.6-Added map user check. Displays users in all guild areas.
+//=============================================================
+
+prontera,151,192,3	script	woe warper	771,{
+
+set @woewarpnowarp,1;  // Set this to 0 if you allow players to use the warp during non-WoE hours.
+set @woewarpplayercount,1;	// Set this to 0 if you do not want players to see how many people are in each guild zone.
+
+lmenu:
+if (@woewarpnowarp==1){if(agitcheck() == 0) goto l_nowoe;}
+mes "[^FF0000WoE Warper^000000]";
+if(@woewarpnowarp==1){mes "Hello "+strcharinfo(0)+", I can warp you to WoE but only if it is active.";}else{mes "Hello "+strcharinfo(0)+", would you like to warp to a WoE Map?";}
+next;
+menu "Warp",lwarp,"Leave",lnope;
+lwarp:
+next;
+if(@woewarpplayercount==1){
+mes "[^FF0000WoE Warper^000000]";
+mes "Choose your destination";
+menu 
+"Prontera [^FF0000" + getmapusers(("prt_gld.gat")+("prtg_cas01.gat")+("prtg_cas02.gat")+("prtg_cas03.gat")+("prtg_cas04.gat")+("prtg_cas05.gat")) + " ^000000players]",l_prontera,
+"Aldebaran [^FF0000" + getmapusers(("alde_gld.gat")+("aldeg_cas01.gat")+("aldeg_cas02.gat")+("aldeg_cas03.gat")+("aldeg_cas04.gat")+("aldeg_cas05.gat")) + " ^000000players]",l_alde,
+"Payon [^FF0000" + getmapusers(("pay_gld.gat")+("payg_cas01.gat")+("payg_cas02.gat")+("payg_cas03.gat")+("payg_cas04.gat")+("payg_cas05.gat")) + " ^000000players]",l_pay,
+"Geffen [^FF0000" + getmapusers(("gef_fild13.gat")+("gefg_cas01.gat")+("gefg_cas02.gat")+("gefg_cas03.gat")+("gefg_cas04.gat")+("gefg_cas05.gat")) + " ^000000players]",l_gef,
+"Nevermind [^FF0000exit^000000]",lnope;
+}else{
+mes "[^FF0000WoE Warper^000000]";
+mes "Choose your destination";
+menu 
+"Prontera",l_prontera,
+"Aldebaran",l_alde,
+"Payon",l_pay,
+"Geffen",l_gef,
+"Nevermind [^FF0000exit^000000]",lnope;}
+l_prontera:
+warp "prt_gld.gat",160,98;
+close;
+l_alde:
+warp "alde_gld.gat",186,157;
+close;
+l_pay:
+warp "pay_gld.gat",370,149;
+close;
+l_gef:
+warp "gef_fild13.gat",41,369;
+close;
+
+l_nowoe:
+mes "[^FF0000WoE Warper^000000]";
+mes "Sorry, but you can only use this feature if WoE is active.";
+close;
+
+lnope:
+next;
+mes "[^FF0000WoE Warper^000000]";
+mes "Have a good day sir!";
+close;
+}

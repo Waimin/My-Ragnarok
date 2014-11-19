@@ -1,0 +1,100 @@
+//===== eAthena Script =======================================
+//= Heal Npc
+//===== By: ==================================================
+//= Lotsa People (1.x)
+//===== Current Version: =====================================
+//= 3.0
+//===== Compatible With: =====================================
+//= eAthena 0.1+;
+//===== Description: =========================================
+//= Healer NPC Which Heals For Free
+//===== Additional Comments: =================================
+//= 3.0 By massdriller, Changed and edited the script
+//= added other warp points of maps.
+//= 2.0 By Darkchild, Duplicates And Changed A Bit
+//= you can replace this script file by heal_payment.txt
+//= if you want that players have to pay their healings.
+//============================================================
+
+prontera,150,184,5	script	Healer#h1-1::Healer	908,{
+
+//	mes "[Healer]";
+//	mes "I have amazing healing powers!!";
+//	mes "You look like a person who needs them";
+//	mes "Want some?";
+//	next;
+//	menu "Heal",-,"No thanks",CANCEL;
+		 percentheal 100,100;
+//skilleffect 384,0; sc_start SC_MELTDOWN,360000,5;
+//skilleffect 383,0; sc_start SC_WINDWALK,360000,5;
+//skilleffect 378,0; sc_start SC_EDP,360000,5;
+//skilleffect 465,0; sc_start SC_KAITE,360000,7;
+//skilleffect 464,0; sc_start SC_KAUPE,360000,3;
+//skilleffect 463,0; sc_start SC_KAAHI,360000,7;
+//skilleffect 462,0; sc_start SC_KAIZEL,360000,7;
+//skilleffect 8,0; sc_start SC_ENDURE,360000,10;
+skilleffect 33,0; sc_start SC_ANGELUS,360000,10;
+//skilleffect 45,0; sc_start SC_CONCENTRATE,360000,10;
+skilleffect 74,0; sc_start SC_MAGNIFICAT,360000,5;
+//skilleffect 75,0; sc_start SC_GLORIA,360000,5;
+//skilleffect 459,0; sc_start SC_ADRENALINE2,360000,1;
+skilleffect 66,0; sc_start SC_IMPOSITIO,360000,5;
+//skilleffect 67,0; sc_start SC_SUFFRAGIUM,360000,3;
+skilleffect 34,0; sc_start SC_BLESSING,360000,10;
+skilleffect 29,0; sc_start SC_INCREASEAGI,360000,10;
+//skilleffect 112,0; sc_start SC_WEAPONPERFECTION,360000,10;
+//skilleffect 113,0; sc_start SC_OVERTHRUST,360000,5;
+//skilleffect 114,0; sc_start SC_MAXIMIZEPOWER,360000,5;
+//skilleffect 357,0; sc_start SC_CONCENTRATION,360000,5;
+//skilleffect 355,0; sc_start SC_AURABLADE,360000,5;
+//skilleffect 155,0; sc_start SC_LOUD,360000,1;
+//skilleffect 157,0; sc_start SC_ENERGYCOAT,360000,1;
+//sc_start SC_ASPDPOTION2,360000,0;
+//sc_start SC_STRFood,360000,10;
+//sc_start SC_AGIFood,360000,10;
+//sc_start SC_VITFood,360000,10;
+//sc_start SC_INTFood,360000,10;
+//sc_start SC_DEXFood,360000,10;
+//sc_start SC_LUKFood,360000,10;
+//sc_start SC_HitFood,1200000,30;
+//sc_start SC_FleeFood,1200000,30;
+//sc_start SC_BATKFood,1200000,10;
+//sc_start SC_MATKFood,120000,10;
+//skilleffect 380,0; sc_start SC_TRUESIGHT,360000,5;
+//skilleffect 361,0; sc_start SC_ASSUMPTIO,360000,5;
+close;
+		mes "[Healer]";
+		mes "I will buff you with my own power";
+		mes "Wonderfull, You are now healed!.";
+		mes "Have fun adventuring!!";
+		close;
+
+	CANCEL:
+	mes "[Healer]";
+	mes "thanks for use me";
+	next;
+	close;
+
+
+	OnInit:
+	waitingroom "Buffer NPC",0;
+	end;
+
+
+}
+
+morocc,159,96,5	duplicate(Healer)	Healer#h1-2	908
+ayothaya,155,111,5	duplicate(Healer)	Healer#h1-3	908
+geffen,121,61,5	duplicate(Healer)	Healer#h1-4	908
+umbala,94,162,5	duplicate(Healer)	Healer#h1-5	908
+payon,180,105,5	duplicate(Healer)	Healer#h1-6	908
+alberta,185,144,5	duplicate(Healer)	Healer#h1-7	908
+aldebaran,134,123,5	duplicate(Healer)	Healer#h1-8	908
+izlude,125,118,5	duplicate(Healer)	Healer#h1-9	908
+xmas,149,136,5	duplicate(Healer)	Healer#h1-10	908
+comodo,188,162,5	duplicate(Healer)	Healer#h1-11	908
+amatsu,200,80,5	duplicate(Healer)	Healer#h1-12	908
+gonryun,164,130,5	duplicate(Healer)	Healer#h1-13	908
+yuno,152,186,5	duplicate(Healer)	Healer#h1-14	908
+niflheim,188,180,5	duplicate(Healer)	Healer#h1-15	908
+louyang,225,103,5	duplicate(Healer)	Healer#h1-16	908

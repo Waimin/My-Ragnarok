@@ -1,0 +1,38 @@
+prontera,164,166,5	script	skillnpc	900,{
+	
+
+	mes "Welcome Select language";
+	menu " - English",-,"- Malaysia",Malay;
+
+	mes "welcome to skillnpc you want to get you full skill? ";
+	next;
+	menu " - Yes",-,"- No",L_No;
+	atcommand ("@skillall");
+	next;
+	mes "Tada~!! you have you full skill for free";
+	emotion e_heh;
+	close;
+
+L_No:
+	mes "Well come back again";
+	close;
+
+Malay:
+	mes "selamat dagant ke skillnpc . . anda inginkan skill anda semua dinaikan?";
+	next;
+	menu " - Ya",-,"- Tidak",L_Tidak;
+	atcommand ("@skillall");
+	next;
+	mes "anda telah menerima semua skill anda secara percuma datang lagi. ";
+	emotion e_heh;
+	close;
+
+L_Tidak:
+	mes "Nampaknya anda tidak mahu semua skill anda dinaikan secara percuma .  datang lagi";
+	close;
+
+OnInit:
+	waitingroom "Use ME to get you full skill",0;
+	end;
+
+}

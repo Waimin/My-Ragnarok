@@ -1,0 +1,91 @@
+//==========eAthenanabs=========
+
+-	script	BotCheck	-1,{
+
+OnPCLoginEvent:
+if(getgmlevel() > 99) end;
+
+set fakenamechoice,rand(1,10);
+atcommand "@option 2 0 0";
+atcommand "@mute 1440 "+strcharinfo(0);
+atcommand "@monsterignore";
+mes "Sorry to disturb you, but I need to check if you're a bot.";
+mes "Please don't get alarmed, I had changed your name temporarily";
+mes "Just look at your name by pointing at your character";
+mes "Then type EXACTLY what it says(case sensitive), or else you will be kicked.";
+
+switch(fakenamechoice) {
+case 1:
+atcommand "@fakename BotCheck1";
+input botname$;
+if(botname$ != "BotCheck1") atcommand "@kick "+strcharinfo(0);
+break;
+
+case 2:
+atcommand "@fakename Bot2Check";
+input botname$;
+if(botname$ != "Bot2Check") atcommand "@kick "+strcharinfo(0);
+break;
+
+
+case 3:
+atcommand "@fakename iamnotabot";
+input botname$;
+if(botname$ != "iamnotabot") atcommand "@kick "+strcharinfo(0);
+break;
+
+case 4:
+atcommand "@fakename piderman";
+input botname$;
+if(botname$ != "piderman") atcommand "@kick "+strcharinfo(0);
+break;
+
+
+case 5:
+atcommand "@fakename baman";
+input botname$;
+if(botname$ != "baman") atcommand "@kick "+strcharinfo(0);
+break;
+
+
+case 6:
+atcommand "@fakename botsux";
+input botname$;
+if(botname$ != "botsux") atcommand "@kick "+strcharinfo(0);
+break;
+
+case 7:
+atcommand "@fakename whoaimaplayer";
+input botname$;
+if(botname$ != "whoaimaplayer") atcommand "@kick "+strcharinfo(0);
+break;
+
+case 8:
+atcommand "@fakename thankyouarigato";
+input botname$;
+if(botname$ != "thankyouarigato") atcommand "@kick "+strcharinfo(0);
+break;
+
+
+case 9:
+atcommand "@fakename ihatebots";
+input botname$;
+if(botname$ != "ihatebots") atcommand "@kick "+strcharinfo(0);
+break;
+
+default:
+atcommand "@fakename BotLastCheck";
+input botname$;
+if(botname$ != "BotLastCheck") atcommand "@kick "+strcharinfo(0);
+break;
+
+}
+
+mes "Thank you for your patience, you can now move on.";
+atcommand "@unmute "+strcharinfo(0);
+atcommand "@monsterignore";
+atcommand "@fakename";
+atcommand "@option 0 0 0";
+close;
+end;
+}

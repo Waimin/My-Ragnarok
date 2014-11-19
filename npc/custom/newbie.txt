@@ -1,0 +1,28 @@
+prontera,146,168,5	script	Item Newbie	864,{
+
+if(##sorry == 1) goto L_1;
+mes "Kamu akan mendapat hadiah daripada kami";
+mes "Sangat berterima kasih kerana bermain dipelayan ini.";
+next;
+//if(checkweight(613,1) == 0 ) goto L_OverWeight;
+if(checkweight) == 0 ) goto L_OverWeight;
+getitem2 2404,1,1,7,0,0,0,0,0;
+getitem2 2504,1,1,7,0,0,0,0,0;
+getitem2 2102,1,1,7,0,0,0,0,0;
+getitem2 2306,1,1,7,0,0,0,0,0;
+emotion e_thx;
+set ##sorry,1;
+close;
+
+L_OverWeight:
+mes "kamu sudah lebih berat badan kamu sendiri # dan tidak boleh mengangkat barang ini";
+emotion e_omg;
+close;
+
+L_1:
+mes "Sialan kamu";
+mes "Sudah dapat mahu lagi?.";
+mes "Cukup sekali sahaja.";
+emotion e_bzz;
+close;
+}

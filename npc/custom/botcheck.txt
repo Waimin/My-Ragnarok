@@ -1,0 +1,53 @@
+///*
+//script by Goddameit
+//http://www.okay88.com/?fromuid=12556
+//http://www2.okay88.com/?fromuid=12556
+//*/
+-	script	Offline Checker	-1,{
+
+OnPCLoginEvent:
+
+	mes "welcome to Ragnarok Offline private server";
+	mes "Remember GM will never Ask For You password";
+	next;
+	mes "Have Fun";
+//	sleep2	2000;
+//	mes "count for delay walking";
+//	mes "1";
+//	sleep2	200;
+//	mes "2";
+//	sleep2	200;
+//	mes "3";
+//	sleep2	200;
+//	mes "4";
+//	sleep2	200;
+//	mes "5";
+//	sleep2	200;
+//	mes "6";
+//	sleep2	200;
+//	mes "7";
+//	sleep2	200;
+//	mes "8";
+//	sleep2	200;
+//	mes "9";
+//	sleep2	200;
+//	mes "10";
+//	sleep2	200;
+//	mes "11";
+//	sleep2	200;
+//	mes "12";
+//	sleep2	200;
+//	mes "13";
+//	sleep2	200;
+//	mes "14";
+//	sleep2	200;
+//	mes "15";
+//	sleep2	200;
+//	mes "16";
+//	sleep2	200;
+//	mes "17";
+//	sleep2	2000;
+//	mes "Have FuN Playing";
+	close;
+
+}
